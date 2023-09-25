@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let myButton: UIButton = {
+    let stopWatchButton: UIButton = {
         let button = UIButton()
         button.setTitle("스톱 워치", for: .normal)
         button.backgroundColor = .blue
@@ -23,15 +22,15 @@ class ViewController: UIViewController {
         print("firstViewDidLoad")
         
         // UI에 button 추가
-        view.addSubview(myButton)
+        view.addSubview(stopWatchButton)
         
         // Auto Layout 제약 조건 설정
-        myButton.translatesAutoresizingMaskIntoConstraints = false
+        stopWatchButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            myButton.widthAnchor.constraint(equalToConstant: 200),
-            myButton.heightAnchor.constraint(equalToConstant: 50)
+            stopWatchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stopWatchButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stopWatchButton.widthAnchor.constraint(equalToConstant: 200),
+            stopWatchButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -63,14 +62,18 @@ class ViewController: UIViewController {
         // 버튼을 눌렀을 때 다른 뷰로 이동하는 코드
         //let secondVC = SecondViewController()
         print("[INFO] pushViewController")
+        
+//        print(vcName.storyboard)
         guard let uvc =
-                self.storyboard?.instantiateViewController(withIdentifier: "StopWatch")
+                self.storyboard?.instantiateViewController(withIdentifier: "StopWatchVC")
         else {
             return
         }
         
 //        let stopWatchVC = StopWatchVC()
-        self.navigationController?.pushViewController(uvc, animated: true)
+       //self.navigationController?.pushViewController(uvc, animated: true)
+        uvc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(uvc, animated: true)
     }
 }
 

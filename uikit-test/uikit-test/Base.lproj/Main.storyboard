@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-2341" y="-104"/>
         </scene>
-        <!--StopWatch-->
+        <!--StopWatchVC-->
         <scene sceneID="qR0-sj-MFF">
             <objects>
-                <viewController storyboardIdentifier="StopWatch" title="StopWatch" id="Mt0-nX-P4a" customClass="StopWatchVC" customModule="uikit_test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StopWatchVC" title="StopWatchVC" id="Mt0-nX-P4a" customClass="StopWatchVC" customModule="uikit_test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ni1-nS-bGb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +103,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3g-3z-VUU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1402" y="-104"/>
+        </scene>
+        <!--TableVC-->
+        <scene sceneID="g1L-vt-pP0">
+            <objects>
+                <viewController storyboardIdentifier="TableVC" id="FS4-RI-hqR" customClass="TableVC" customModule="uikit_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3pY-Jw-CNG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0Z3-yh-gma"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JjF-gf-YBi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-457" y="-104"/>
         </scene>
     </scenes>
     <resources>
