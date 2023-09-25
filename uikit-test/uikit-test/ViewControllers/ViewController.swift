@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     let myButton: UIButton = {
         let button = UIButton()
-        button.setTitle("다른 뷰로 이동", for: .normal)
+        button.setTitle("스톱 워치", for: .normal)
         button.backgroundColor = .blue
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
@@ -61,8 +61,16 @@ class ViewController: UIViewController {
     
     @objc func buttonTapped() {
         // 버튼을 눌렀을 때 다른 뷰로 이동하는 코드
-        let secondVC = SecondViewController()
-        self.navigationController?.pushViewController(secondVC, animated: true)
+        //let secondVC = SecondViewController()
+        print("[INFO] pushViewController")
+        guard let uvc =
+                self.storyboard?.instantiateViewController(withIdentifier: "StopWatch")
+        else {
+            return
+        }
+        
+//        let stopWatchVC = StopWatchVC()
+        self.navigationController?.pushViewController(uvc, animated: true)
     }
 }
 
