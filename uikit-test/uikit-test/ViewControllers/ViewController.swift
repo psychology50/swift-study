@@ -15,6 +15,13 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
+    let searchBarBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("검색바", for: .normal)
+        button.backgroundColor = .blue
+        button.addTarget(self, action: #selector(searchBarBtnTapped), for: .touchUpInside)
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +30,21 @@ class ViewController: UIViewController {
         
         // UI에 button 추가
         view.addSubview(stopWatchButton)
+        view.addSubview(searchBarBtn)
         
         // Auto Layout 제약 조건 설정
         stopWatchButton.translatesAutoresizingMaskIntoConstraints = false
+        searchBarBtn.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stopWatchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             stopWatchButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stopWatchButton.widthAnchor.constraint(equalToConstant: 200),
-            stopWatchButton.heightAnchor.constraint(equalToConstant: 50)
+            stopWatchButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            searchBarBtn.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            searchBarBtn.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            searchBarBtn.widthAnchor.constraint(equalToConstant: 200),
+            searchBarBtn.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -72,6 +86,15 @@ class ViewController: UIViewController {
         
 //        let stopWatchVC = StopWatchVC()
        //self.navigationController?.pushViewController(uvc, animated: true)
+        uvc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(uvc, animated: true)
+    }
+    
+    @objc func searchBarBtnTapped() {
+        print("[INFO] searchBarBtnTapped")
+        
+        let uvc = SearchBarVC()
+        
         uvc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         self.present(uvc, animated: true)
     }
