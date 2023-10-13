@@ -1,1 +1,3 @@
 ## todos
+- StopWatch
+- Category View
